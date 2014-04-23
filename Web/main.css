@@ -1,0 +1,35 @@
+#Title {
+	background-color: #333333;
+	height: 65px;
+	margin-top: -21px;
+	width: 100%;
+	color: whitesmoke;
+}
+
+#editor {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    margin-top: 20px
+}
+
+button.Button {
+	background: none repeat scroll 0 0 #00CC00;
+	font-size: 22px;
+	color: black;
+	padding: 8px 22px;
+	border-radius: 100px;
+	border: 3px solid #808080;
+	right: 20px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+button.Button:hover {
+	background: #00FF00;
+	color: black;
+}
+
+button.Button:active {
+	background: #00FF66;
+}

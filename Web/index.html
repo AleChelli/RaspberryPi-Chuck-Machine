@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Video Uploader</title>
+		<link rel="stylesheet" type="text/css" href="main.css"/>
+		<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/mode-arduino.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			window.addEventListener("load", Ready); 
+			function Ready(){
+				document.getElementById('UploadButton').addEventListener('click', Send);
+			}
+			var socket = io.connect('http://localhost:8080');
+			function Send(){
+				var file = editor.getValue();
+				socket.emit('SendFile', {'File' : file });
+
+			} 
+		</script>
+
+	</head>
+	<body>
+		<div id="Title">
+			<h1>Chuck Real-Time Machine</h1>
+			<div id="Title">
+				<button	type='button' id='UploadButton' class='Button'>+</button>
+			<div>
+		</div>
+		<div id="editor">some text</div>
+    	<script type="text/javascript">
+        	var editor = ace.edit("editor");
+    		editor.getSession().setMode("ace/mode/arduino");
+    	</script>
+	</body>
+</html>
+
