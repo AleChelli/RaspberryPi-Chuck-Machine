@@ -56,17 +56,20 @@ sudo amixer cset numid=3 1
 </code></pre>
 
 <h3>Web</h3>
-<p> In order for get the things work, you need install NodeJs and npm</p>
-<p> You need also, express module and socket.io </p>
+<p> In order for get the things work, you need install NodeJs and npm in your RPi</p>
+<p> You need also this module express and socket.io </p>
 
 <h4>Try</h4>
-<p> For try this:</p>
+<p> Now you can run the code, so from the folder RaspberryPi Chuck Machine/Web enter:</p>
 <pre>
 <code>
 node node.js
 </code>
 </pre>
 
-<p> Now point your web to: "localhost:8080"
-	Write some chuck code and click ad button and your Raspberry Pi will start playing your code. 
+<p> Now point your web to: 
+	<pre><code>http:localhost:8080</code></pre>
+	Write some chuck code and click the ADD button and your Raspberry Pi will start playing your code. 
 </p>
+
+<h2> Things to do </h2>
