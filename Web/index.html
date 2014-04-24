@@ -5,7 +5,8 @@
 		<title>Chuck Live</title>
 		<link rel="stylesheet" type="text/css" href="main.css"/>
 		<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
-		<script src="src/mode-arduino.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/mode-c_cpp.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			window.addEventListener("load", Ready); 
@@ -15,7 +16,9 @@
 			var socket = io.connect('http://localhost:8080');
 			function Send(){
 				var file = editor.getValue();
-				socket.emit('SendFile', {'File' : file });
+				var name = document.getElementById('name').value
+				alert(name)
+				socket.emit('SendFile', {'File' : file , 'Name' : name });
 
 			} 
 		</script>
@@ -25,13 +28,17 @@
 		<div id="Title">
 			<h1>Chuck Real-Time Machine</h1>
 			<div id="Title">
-				<button	type='button' id='UploadButton' class='Button'>+</button>
-			<div>
+			<div id="form">
+				<label for="name">Name:</label>
+        		<input type="text" id="name" placeholder="test.ck"/>
+        		<button	type='button' id='UploadButton' class='Button'>+</button>
+			</div>
 		</div>
 		<div id="editor">some text</div>
     	<script type="text/javascript">
         	var editor = ace.edit("editor");
-    		editor.getSession().setMode("ace/mode/arduino");
+        	editor.setTheme("ace/theme/twilight"); 
+    		editor.getSession().setMode("ace/mode/c_cpp");
     	</script>
 	</body>
 </html>

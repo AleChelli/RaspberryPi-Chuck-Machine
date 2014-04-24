@@ -38,11 +38,12 @@ io.sockets.on('connection', function (socket) {
 
 	socket.on('SendFile', function (data){
 		var file = data['File'];
-		fs.writeFile(__dirname +"/File/test.ck", file , function(err) {
+    var name = data['Name'];
+		fs.writeFile(__dirname +"/File/"+name, file , function(err) {
     	if(err) {
         	console.log(err);
     	} else {
-        	exec("chuck + File/test.ck", puts);
+        	exec("chuck + File/"+name, puts);
     	}
 });
 	});
